@@ -55,8 +55,20 @@ const AdminLoginPage = () => {
     }
   });
 
+  // Quick Demo Admin Login Helper
+  const handleQuickLogin = (email, password) => {
+    formik.setValues({
+      email,
+      password,
+      rememberMe: true
+    });
+    setTimeout(() => {
+      formik.submitForm();
+    }, 100);
+  };
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', background: '#FFFFFF' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', background: '#FFFFFF', width: '100%', overflowX: 'hidden' }}>
       {/* LEFT COLUMN: Editorial Architecture Imagery */}
       <div 
         style={{
@@ -70,7 +82,7 @@ const AdminLoginPage = () => {
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
-        className="login-image-column"
+        className="admin-image-column"
       >
         <img 
           src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80" 
@@ -92,7 +104,7 @@ const AdminLoginPage = () => {
 
         {/* Narrative Quote */}
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '480px' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: '#FFFFFF', margin: '0 0 16px', lineHeight: 1.2, fontWeight: 500 }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', color: '#FFFFFF', margin: '0 0 16px', lineHeight: 1.25, fontWeight: 500 }}>
             Executive management console.
           </h2>
           <p style={{ color: '#D1D5DB', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
@@ -117,6 +129,7 @@ const AdminLoginPage = () => {
           background: '#FFFFFF',
           overflowY: 'auto'
         }}
+        className="admin-form-column"
       >
         <div style={{ maxWidth: '420px', width: '100%', margin: '0 auto' }}>
           {/* Back Link */}
@@ -137,13 +150,56 @@ const AdminLoginPage = () => {
           </Link>
 
           {/* Form Header */}
-          <div style={{ marginBottom: '28px' }}>
+          <div style={{ marginBottom: '24px' }}>
             <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#111418', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
               Admin Sign In
             </h1>
             <p style={{ color: '#6B7280', fontSize: '0.9rem', margin: 0 }}>
               Sign in with authorized administrator credentials to manage portal operations.
             </p>
+          </div>
+
+          {/* Quick 1-Click Demo Admin Login */}
+          <div 
+            style={{
+              padding: '14px',
+              background: '#F9FAFB',
+              borderRadius: '10px',
+              border: '1px solid #E5E7EB',
+              marginBottom: '24px'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                Quick Demo Access
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#6B7280', fontFamily: 'monospace' }}>
+                admin1@gmail.com
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => handleQuickLogin('admin1@gmail.com', '17122007')}
+              style={{
+                width: '100%',
+                padding: '9px 14px',
+                borderRadius: '6px',
+                border: '1px solid #D1D5DB',
+                background: '#FFFFFF',
+                color: '#111418',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.15s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px'
+              }}
+              className="admin-demo-btn"
+            >
+              <ShieldCheck size={15} color="#111418" /> 1-Click Demo Admin Login
+            </button>
           </div>
 
           {/* Form */}
@@ -162,11 +218,11 @@ const AdminLoginPage = () => {
               >
                 Administrator Email
               </label>
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: 'relative', width: '100%' }}>
                 <Mail 
                   size={18} 
                   color="#9CA3AF" 
-                  style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} 
+                  style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} 
                 />
                 <input 
                   id="admin-email"
@@ -175,10 +231,14 @@ const AdminLoginPage = () => {
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  placeholder="admin@example.com"
+                  placeholder="admin1@gmail.com"
                   className="input-modern"
                   style={{ 
-                    paddingLeft: '42px',
+                    width: '100%',
+                    height: '46px',
+                    boxSizing: 'border-box',
+                    paddingLeft: '44px',
+                    paddingRight: '14px',
                     borderColor: formik.touched.email && formik.errors.email ? '#EF4444' : undefined
                   }}
                 />
@@ -204,11 +264,11 @@ const AdminLoginPage = () => {
               >
                 Security Password
               </label>
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: 'relative', width: '100%' }}>
                 <Lock 
                   size={18} 
                   color="#9CA3AF" 
-                  style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} 
+                  style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} 
                 />
                 <input 
                   id="admin-password"
@@ -220,14 +280,18 @@ const AdminLoginPage = () => {
                   placeholder="••••••••••••"
                   className="input-modern"
                   style={{ 
-                    paddingLeft: '42px', 
-                    paddingRight: '42px',
+                    width: '100%',
+                    height: '46px',
+                    boxSizing: 'border-box',
+                    paddingLeft: '44px', 
+                    paddingRight: '44px',
                     borderColor: formik.touched.password && formik.errors.password ? '#EF4444' : undefined
                   }}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                   style={{
                     position: 'absolute',
                     right: '12px',
@@ -238,7 +302,10 @@ const AdminLoginPage = () => {
                     color: '#9CA3AF',
                     cursor: 'pointer',
                     display: 'flex',
-                    padding: '4px'
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '6px',
+                    borderRadius: '4px'
                   }}
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -272,7 +339,7 @@ const AdminLoginPage = () => {
               className="btn-primary"
               style={{
                 width: '100%',
-                padding: '12px 20px',
+                padding: '13px 20px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -291,6 +358,22 @@ const AdminLoginPage = () => {
           </form>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .admin-image-column {
+            display: none !important;
+          }
+          .admin-form-column {
+            flex: 1 1 100% !important;
+            padding: 36px 20px !important;
+          }
+        }
+        .admin-demo-btn:hover {
+          background-color: #F3F4F6 !important;
+          border-color: #9CA3AF !important;
+        }
+      `}</style>
     </div>
   );
 };

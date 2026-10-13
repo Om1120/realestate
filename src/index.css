@@ -273,7 +273,8 @@ p, span, a, button, input, select, textarea {
 }
 
 /* Modern Form Inputs */
-.input-luxury {
+.input-luxury,
+.input-modern {
   width: 100%;
   padding: 11px 16px;
   background: var(--bg-surface);
@@ -283,13 +284,16 @@ p, span, a, button, input, select, textarea {
   font-size: 0.9rem;
   font-family: var(--font-sans);
   outline: none;
+  box-sizing: border-box;
   transition: all var(--transition-fast);
 }
-.input-luxury:focus {
+.input-luxury:focus,
+.input-modern:focus {
   border-color: var(--text-primary);
   box-shadow: 0 0 0 2px rgba(17, 20, 24, 0.08);
 }
-.input-luxury::placeholder {
+.input-luxury::placeholder,
+.input-modern::placeholder {
   color: var(--text-muted);
 }
 
