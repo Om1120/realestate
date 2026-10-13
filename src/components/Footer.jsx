@@ -137,6 +137,15 @@ const Footer = () => {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <a 
+              href="https://github.com/Om1120/realestate" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="footer-social-icon"
+              aria-label="GitHub"
+            >
+              <i className="fa-brands fa-github"></i>
+            </a>
+            <a 
               href="https://instagram.com" 
               target="_blank" 
               rel="noreferrer" 

@@ -1,16 +1,110 @@
-# React + Vite
+# 🏰 Aurelia Estates — Luxury Real Estate Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-success?style=for-the-badge&logo=vercel&logoColor=white)](https://realestate-two-gray.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Om1120/realestate)
+[![Vite](https://img.shields.io/badge/Vite-8.3.0-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-2.12.0-764ABC?style=flat&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
 
-Currently, two official plugins are available:
+> **Aurelia Estates** is a modern, high-performance luxury real estate web platform showcasing premier residential and commercial properties across major Indian metropolitan areas including Mumbai, Ahmedabad, Bengaluru, and Delhi.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Live Website Links
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Primary Live URL**: [https://realestate-two-gray.vercel.app](https://realestate-two-gray.vercel.app)
+- **Alternative URL**: [https://realestate-om1120s-projects.vercel.app](https://realestate-om1120s-projects.vercel.app)
+- **Source Code**: [https://github.com/Om1120/realestate](https://github.com/Om1120/realestate)
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## ✨ Features
+
+- 🏡 **Luxury Property Showcase**: Browse curated listings including apartments, penthouses, luxury villas, and commercial spaces.
+- 🔍 **Advanced Filtering & Search**: Instant filtering by city/location, property type, price range, bedrooms, and amenities.
+- ❤️ **Saved Favourites / Wishlist**: Persisted favorites list managed via Redux Toolkit with quick access.
+- 📅 **Schedule Tour & Inquiry Booking**: Interactive appointment scheduling and inquiry modals with Formik & Yup validation.
+- 🛡️ **Admin Portal & Management**: Dedicated administrative console to create, update, and manage property listings and inquiries.
+- 📊 **Market Insights & Analytics**: Real-time interactive charts powered by Chart.js & React-Chartjs-2.
+- 📱 **Responsive & Clean UI**: Elegant luxury typography, smooth micro-interactions, preloader animations, and modern layout.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19, React Router DOM v7
+- **State Management**: Redux Toolkit & React-Redux
+- **Styling**: Modern CSS with luxury design tokens & responsive grids
+- **Form Handling & Validation**: Formik, Yup
+- **Charts & Visualizations**: Chart.js, React-Chartjs-2
+- **Icons**: Lucide React & Font Awesome 6
+- **Build Tool**: Vite 8 with HMR & Oxlint
+- **Hosting & CI/CD**: Vercel
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) (v18 or higher) installed.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Om1120/realestate.git
+   cd realestate
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the local development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build:**
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 📁 Project Structure
+
+```text
+├── public/                 # Static assets
+├── src/
+│   ├── api/                # API and mock data services
+│   ├── assets/             # Images and local media
+│   ├── components/         # Reusable UI components (Navbar, Footer, Cards, Forms)
+│   ├── data/               # Properties, agents, and testimonials datasets
+│   ├── hooks/              # Custom React hooks
+│   ├── layouts/            # Page layouts & structure
+│   ├── pages/              # App pages (Home, Properties, Details, Admin, About, Contact)
+│   ├── redux/              # Redux slices (auth, favorites, properties, ui)
+│   ├── routes/             # App routing configuration
+│   ├── schemas/            # Yup validation schemas
+│   ├── utils/              # Helper utilities
+│   ├── App.jsx             # Main Application root
+│   └── main.jsx            # Entry point
+├── index.html              # HTML shell & font definitions
+├── package.json            # Project dependencies and scripts
+└── vite.config.js          # Vite configuration
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
