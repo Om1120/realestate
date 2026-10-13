@@ -7,7 +7,7 @@ const DEMO_USERS = [
   {
     id: 'usr-admin-1',
     name: 'Administrator',
-    email: 'admin1@gmail.com',
+    email: 'om17@gmail.com',
     password: '17122007',
     role: 'admin',
     avatar: '/Images/Cus1.webp',

@@ -41,7 +41,7 @@ Aurelia Estates includes a discreet global keyboard shortcut for immediate admin
 
 | Role | Email | Password | Permissions |
 | :--- | :--- | :--- | :--- |
-| **Administrator** | `admin1@gmail.com` | `17122007` | Full access (Add, edit, delete properties & manage inquiries) |
+| **Administrator** | `om17@gmail.com` | `17122007` | Full access (Add, edit, delete properties & manage inquiries) |
 | **Admin (Backup)** | `admin@example.com` | `admin123` | Full access |
 | **Demo Client** | `user@example.com` | `user123` | Client dashboard & saved favorites |
 

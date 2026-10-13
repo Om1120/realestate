@@ -174,12 +174,12 @@ const AdminLoginPage = () => {
                 Quick Demo Access
               </div>
               <div style={{ fontSize: '0.75rem', color: '#6B7280', fontFamily: 'monospace' }}>
-                admin1@gmail.com
+                om17@gmail.com
               </div>
             </div>
             <button
               type="button"
-              onClick={() => handleQuickLogin('admin1@gmail.com', '17122007')}
+              onClick={() => handleQuickLogin('om17@gmail.com', '17122007')}
               style={{
                 width: '100%',
                 padding: '9px 14px',
@@ -231,7 +231,7 @@ const AdminLoginPage = () => {
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  placeholder="admin1@gmail.com"
+                  placeholder="om17@gmail.com"
                   className="input-modern"
                   style={{ 
                     width: '100%',
