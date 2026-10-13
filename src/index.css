@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Modern Luxury Neutral Palette */
+  --bg-main: #FBFBFA;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F4F5F7;
+  --bg-subtle-hover: #ECEEF2;
+  --bg-dark: #111418;
+  --bg-dark-surface: #181C22;
+  
+  /* Text Colors */
+  --text-primary: #111418;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+  --text-light: #FFFFFF;
+  --text-light-muted: #9CA3AF;
+
+  /* Borders & Dividers */
+  --border-subtle: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --border-dark: #111418;
+
+  /* Refined Modern Accents */
+  --accent-primary: #111418;
+  --accent-warm: #966A48;
+  --accent-terracotta: #B85D3B;
+  --accent-subtle: rgba(17, 20, 24, 0.05);
+
+  /* Status Badges */
+  --status-sale-bg: #F0F5FF;
+  --status-sale-text: #2563EB;
+  --status-sale-border: #DBEAFE;
+
+  --status-rent-bg: #F0FDF4;
+  --status-rent-text: #16A34A;
+  --status-rent-border: #DCFCE7;
+
+  --status-sold-bg: #FEF2F2;
+  --status-sold-text: #DC2626;
+  --status-sold-border: #FEE2E2;
+
+  --status-available-bg: #ECFDF5;
+  --status-available-text: #059669;
+  --status-available-border: #D1FAE5;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-royal: 'Playfair Display', Georgia, serif;
+
+  /* Shadows */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 16px 36px -4px rgba(0, 0, 0, 0.09);
+  --shadow-floating: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.18);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+p, span, a, button, input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Modern Luxury Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--bg-dark);
+  color: #FFFFFF;
+  border: 1px solid var(--bg-dark);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+.btn-primary:hover {
+  background-color: #262B33;
+  border-color: #262B33;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+.btn-secondary:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+.btn-ghost:hover {
+  color: var(--text-secondary);
+  gap: 9px;
+}
+
+.btn-gold {
+  /* Alias for primary dark button in modern theme */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--bg-dark);
+  color: #FFFFFF;
+  border: 1px solid var(--bg-dark);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+.btn-gold:hover {
+  background-color: #262B33;
+  border-color: #262B33;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Modern Floating Search Container */
+.floating-search-bar {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-floating);
+  padding: 12px;
+}
+
+/* Modern Luxury Cards */
+.card-luxury {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-smooth);
+}
+.card-luxury:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-property-modern {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-smooth);
+}
+.card-property-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-medium);
+}
+.card-property-modern .property-img-container {
+  overflow: hidden;
+  position: relative;
+}
+.card-property-modern img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-property-modern:hover img {
+  transform: scale(1.04);
+}
+
+/* Modern Form Inputs */
+.input-luxury {
+  width: 100%;
+  padding: 11px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+.input-luxury:focus {
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 2px rgba(17, 20, 24, 0.08);
+}
+.input-luxury::placeholder {
+  color: var(--text-muted);
+}
+
+/* Status Badges */
+.badge-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.badge-sale {
+  background: var(--status-sale-bg);
+  color: var(--status-sale-text);
+  border: 1px solid var(--status-sale-border);
+}
+.badge-rent {
+  background: var(--status-rent-bg);
+  color: var(--status-rent-text);
+  border: 1px solid var(--status-rent-border);
+}
+.badge-sold {
+  background: var(--status-sold-bg);
+  color: var(--status-sold-text);
+  border: 1px solid var(--status-sold-border);
+}
+.badge-available {
+  background: var(--status-available-bg);
+  color: var(--status-available-text);
+  border: 1px solid var(--status-available-border);
+}
+
+/* Filter Chips */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.filter-chip:hover {
+  background: #E5E7EB;
+}
+.filter-chip.active {
+  background: var(--bg-dark);
+  color: #FFFFFF;
+  border-color: var(--bg-dark);
+}
+
+/* Text Highlights */
+.gold-gradient-text {
+  color: var(--text-primary);
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* 21st.dev inspired Animation System */
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(243, 244, 246, 0.9) 0%,
+    rgba(229, 231, 235, 0.5) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(229, 231, 235, 0.5) 60%,
+    rgba(243, 244, 246, 0.9) 100%
+  );
+  background-size: 250% 100%;
+  animation: shimmerWave 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes shimmerWave {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Buffering Spinners & Dots */
+.spin-slow {
+  animation: spinSlow 0.9s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.buffering-dots {
+  display: inline-flex;
+  gap: 1px;
+}
+.buffering-dots .dot-1 { animation: dotPulse 1.4s infinite 0.1s; }
+.buffering-dots .dot-2 { animation: dotPulse 1.4s infinite 0.3s; }
+.buffering-dots .dot-3 { animation: dotPulse 1.4s infinite 0.5s; }
+
+@keyframes dotPulse {
+  0%, 80%, 100% { opacity: 0.2; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-2px); }
+}
+
+/* Pop Icon on End/Success */
+.pop-icon {
+  display: inline-flex;
+  animation: popCheck 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popCheck {
+  0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+  70% { transform: scale(1.25) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Heart Pop Spring Animation */
+.heart-popping {
+  animation: heartPop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.35); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* Staggered Card Entrance */
+.card-stagger-enter {
+  opacity: 0;
+  animation: cardFadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Toast Sonner Progress Bar */
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #111418, #966A48);
+  border-radius: 0 0 10px 10px;
+  animation: toastDrain 4s linear forwards;
+}
+
+@keyframes toastDrain {
+  0% { width: 100%; }
+  100% { width: 0%; }
+}
+
+/* Glass Float Hover Enhancement */
+.card-property-modern {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
+}
+
+.card-property-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.1);
+  border-color: #D1D5DB;
+}
+
+/* Interactive Button Hover Glow */
+.btn-animated-interactive {
+  position: relative;
+  will-change: transform;
+}
+.btn-animated-interactive:hover {
+  transform: translateY(-1px);
+}
+.btn-animated-interactive:active {
+  transform: translateY(0);
+}
+
+/* Responsive Container */
+.container-luxury {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (max-width: 640px) {
+  .container-luxury {
+    padding: 0 16px;
+  }
+}
+
