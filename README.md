@@ -30,6 +30,23 @@
 
 ---
 
+## 🔐 Admin Panel & Shortcut Key
+
+Aurelia Estates includes a discreet global keyboard shortcut for immediate administrative access from any page on the website:
+
+- **Shortcut Key Combination**: <kbd>Esc</kbd> + <kbd>`</kbd> *(Press `Escape` followed by Backtick `` ` `` / `` ~ `` within 1.5 seconds, or press them simultaneously)*
+- **Direct Link**: [/admin/login](https://realestate-two-gray.vercel.app/admin/login)
+
+### 🔑 Demo Login Credentials
+
+| Role | Email | Password | Permissions |
+| :--- | :--- | :--- | :--- |
+| **Administrator** | `admin1@gmail.com` | `17122007` | Full access (Add, edit, delete properties & manage inquiries) |
+| **Admin (Backup)** | `admin@example.com` | `admin123` | Full access |
+| **Demo Client** | `user@example.com` | `user123` | Client dashboard & saved favorites |
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 19, React Router DOM v7
